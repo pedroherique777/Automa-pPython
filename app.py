@@ -26,13 +26,14 @@ for linha in pag_prod.iter_rows(min_row=2):
 
     # Rolar a página para baixo um pouco (ex: 500 pixels)
     driver.execute_script("window.scrollBy(0, 500);")
+    
     #Nome do Produto
     nome_prod=linha[0].value
     
     #Oque vai ser copiado
     pyperclip.copy(nome_prod)
-    
-   
+
+    #Inserir valor no campo determinado
     driver.find_element(By.NAME, 'product_name').send_keys(nome_prod)
     
     
@@ -77,7 +78,7 @@ for linha in pag_prod.iter_rows(min_row=2):
     sleep(1)
 
 
-    
+    #Clicar no Botão Proximo
     driver.find_element(By.CLASS_NAME, "btn-primary").click()
 
     sleep(3)
@@ -167,11 +168,13 @@ for linha in pag_prod.iter_rows(min_row=2):
     
     driver.find_element(By.CLASS_NAME, "btn-primary").click()
 
+    #Aceitar o pop up do site dizendo sobre que os dados foram salvos no banco 
     alert= Alert(driver)
     alert.accept()
 
     sleep(2)
-     
+
+    #clica no botão de adicionar outro item =
     driver.find_element(By.XPATH, "//button[@onclick=\"window.location.href='index.html'\"]").click()
 
 
