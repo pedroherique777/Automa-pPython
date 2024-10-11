@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.alert import Alert
 import openpyxl
 from time import sleep
-import pyperclip
+
 #carregar planilha
 workbook =  openpyxl.load_workbook('produtos_ficticios.xlsx')
 pag_prod = workbook['Produtos']
